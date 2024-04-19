@@ -1,12 +1,4 @@
 package project;
-/*- `ticketID: String`
-  - `passenger: Passenger`
-  - `train: Train`
-  - `departureStation: Station`
-  - `arrivalStation: Station`
-  - `departureTime: DateTime`
-  - `seatNumber: int`
-  - `price: double`*/
 public class Ticket {
     private Passenger passenger;
     private Train train;
@@ -15,16 +7,8 @@ public class Ticket {
     private int seatNumber;
     private double price; 
 
-  /*   public Ticket(Passenger passenger, Train train, Station departurestaion, Station arrivalstaion, int seatNumber, double price) {
-        this.passenger = passenger;
-        this.train = train;
-        this.departurestaion = departurestaion;
-        this.arrivalstaion = arrivalstaion;
-        this.seatNumber = seatNumber;
-        this.price = price;
-    } */
-
-    public Ticket(Passenger passenger, Train train, Station departurestaion, Station arrivalstaion, int seatNumber, double price) {
+  public Ticket(String ticketID, Passenger passenger, Train train, Station departurestaion, Station arrivalstaion, int seatNumber, double price) {
+        this.ticketID = ticketID;
         this.passenger = passenger;
         this.train = train;
         this.departurestaion = departurestaion;
@@ -32,7 +16,14 @@ public class Ticket {
         this.seatNumber = seatNumber;
         this.price = price;
     }
-    
+
+    public String getTicketID() {
+        return ticketID;
+    }
+
+    public void setTicketID(String ticketID) {
+        this.ticketID = ticketID;
+    }
 
     public Passenger getPassenger() {
         return passenger;
@@ -81,7 +72,7 @@ public class Ticket {
     public void setPrice(double price) {
         this.price = price;
     }
-  // `calculatePrice(): double`  
+
   public void TicketDetails(){
       System.out.println(" ");
   }
