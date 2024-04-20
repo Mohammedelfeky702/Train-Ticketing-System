@@ -1,13 +1,16 @@
 package project;
+
 public class Ticket {
+    private String ticketID;
     private Passenger passenger;
     private Train train;
     private Station departurestaion;
     private Station arrivalstaion;
     private int seatNumber;
     private double price; 
+    private DateTime departureTime;
 
-  public Ticket(String ticketID, Passenger passenger, Train train, Station departurestaion, Station arrivalstaion, int seatNumber, double price) {
+    public Ticket(String ticketID, Passenger passenger, Train train, Station departurestaion, Station arrivalstaion, int seatNumber, double price, DateTime departureTime) {
         this.ticketID = ticketID;
         this.passenger = passenger;
         this.train = train;
@@ -15,6 +18,7 @@ public class Ticket {
         this.arrivalstaion = arrivalstaion;
         this.seatNumber = seatNumber;
         this.price = price;
+        this.departureTime = departureTime;
     }
 
     public String getTicketID() {
@@ -73,7 +77,18 @@ public class Ticket {
         this.price = price;
     }
 
-  public void TicketDetails(){
+    public DateTime getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(DateTime departureTime) {
+        this.departureTime = departureTime;
+    }
+
+
+
+
+      public void TicketDetails(){
       System.out.println(" ");
   }
   
