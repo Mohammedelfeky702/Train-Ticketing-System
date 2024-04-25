@@ -86,14 +86,14 @@ private String type; // Ticket type (e.g., "Standard", "First Class", "Economy")
     public void setDepartureTime(Date departureTime) {
         this.departureTime = departureTime;
     }
+    // method to print the dettails of the booking
      public String Ticket_Details(){
      return  "ID:"+TicketId +"departureTime:"+ departureTime +"seatNumber:"+ seatNumber +"price:"+ price +"From"+ departurestation +"to"+ arrivalstation
        +"passenger:"+ passenger+"Train:"+ train;
      }
 /**********public double CalcPrice(){return 0;};*/
-
+     // Calculate price based on ticket type
     public double CalcPrice() {
-        // Calculate price based on ticket type
         switch (this.type.toLowerCase()) {
             case "standard":
                 return 50.0;
