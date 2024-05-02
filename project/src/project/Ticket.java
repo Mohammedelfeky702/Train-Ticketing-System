@@ -104,11 +104,11 @@ private String type; // Ticket type (e.g., "Standard", "First Class", "Economy")
     public double CalcPrice() {
         switch (this.type.toLowerCase()) {
             case "standard":
-                return 50.0;
+                return 10.0;
             case "first class":
-                return 70.0;
+                return 15.0;
             case "economy":
-                return 30.0;
+                return 7.0;
             default:
                 return 0.0;
         }}
