@@ -87,10 +87,18 @@ private String type; // Ticket type (e.g., "Standard", "First Class", "Economy")
         this.departureTime = departureTime;
     }
     // method to print the dettails of the booking
-     public String Ticket_Details(){
-     return  "ID:"+TicketId +"departureTime:"+ departureTime +"seatNumber:"+ seatNumber +"price:"+ price +"From"+ departurestation +"to"+ arrivalstation
-       +"passenger:"+ passenger+"Train:"+ train;
-     }
+       public void TicketDetails(){
+
+    System.out.println("Ticket ID: " + ticketID);
+    System.out.println("Passenger: " + passenger.getName());
+    System.out.println("Train: " + train.getTrainID());
+    System.out.println("Departure Station: " + departurestaion.getStaionName());
+    System.out.println("Arrival Station: " + arrivalstaion.getStaionName());
+    System.out.println("Seat Number: " + seatNumber);
+    System.out.println("Price: " + price);
+    System.out.println("Departure Time: " + departureTime.toString());
+    System.out.println();
+}
 /**********public double CalcPrice(){return 0;};*/
      // Calculate price based on ticket type
     public double CalcPrice() {
