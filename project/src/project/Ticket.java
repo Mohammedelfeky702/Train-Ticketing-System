@@ -1,18 +1,20 @@
 package project;
 
+
 import java.util.*;
 /**
  *
  * @author LENOVO
  */
-public class Ticket  {
+public class Ticket extends Station{
     // Declaring Variables
 private String TicketId; private Passenger passenger; private Train train;
 private Station departurestation; private Station arrivalstation;
-private int seatNumber;private double price; private Date departureTime;
+private int seatNumber;private double price; private String departureTime;
 private String type; // Ticket type (e.g., "Standard", "First Class", "Economy")
   // Constructor to define attributes
-    public Ticket(String TicketId, Passenger passenger, Train train, Station departurestation, Station arrivalstation, int seatNumber, double price, Date departureTime) {
+    public Ticket(String TicketId, Passenger passenger, Train train, Station departurestation, Station arrivalstation, int seatNumber, double price, String departureTime, String type, int statioID, String staionName, String location) {
+        super(statioID, staionName, location);
         this.TicketId = TicketId;
         this.passenger = passenger;
         this.train = train;
@@ -21,7 +23,9 @@ private String type; // Ticket type (e.g., "Standard", "First Class", "Economy")
         this.seatNumber = seatNumber;
         this.price = price;
         this.departureTime = departureTime;
+        this.type = type;
     }
+   
   // setters and getters 
     public String getTicketId() {
         return TicketId;
@@ -79,21 +83,21 @@ private String type; // Ticket type (e.g., "Standard", "First Class", "Economy")
         this.price = price;
     }
 
-    public Date getDepartureTime() {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(Date departureTime) {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
     // method to print the dettails of the booking
        public void TicketDetails(){
 
-    System.out.println("Ticket ID: " + ticketID);
+    System.out.println("Ticket ID: " + TicketId);
     System.out.println("Passenger: " + passenger.getName());
     System.out.println("Train: " + train.getTrainID());
-    System.out.println("Departure Station: " + departurestaion.getStaionName());
-    System.out.println("Arrival Station: " + arrivalstaion.getStaionName());
+    System.out.println("Departure Station: " + departurestation.getStaionName());
+    System.out.println("Arrival Station: " + arrivalstation.getStaionName());
     System.out.println("Seat Number: " + seatNumber);
     System.out.println("Price: " + price);
     System.out.println("Departure Time: " + departureTime.toString());
@@ -112,4 +116,11 @@ private String type; // Ticket type (e.g., "Standard", "First Class", "Economy")
             default:
                 return 0.0;
         }}
+
+    @Override
+    public String toString() {
+        return "Ticket{" + "TicketId=" + TicketId + ", passenger=" + passenger + ", train=" + train + ", departurestation=" + departurestation + ", arrivalstation=" + arrivalstation + ", seatNumber=" + seatNumber + ", price=" + price + ", departureTime=" + departureTime + ", type=" + type + '}';
+    }
+    
 }
+
